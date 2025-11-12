@@ -1,0 +1,49 @@
+drops:
+  blocks:
+    STONE:
+      - command: "give %player% diamond 1"
+        chance: 0.05
+      - command: "eco give %player% 100"
+        chance: 0.1
+    IRON_ORE:
+      - command: "give %player% emerald 1"
+        chance: 0.15
+    DIAMOND_ORE:
+      - command: "give %player% diamond 5"
+        chance: 1.0
+      - command: "eco give %player% 1000"
+        chance: 0.5
+
+  crops:
+    WHEAT:
+      - command: "give %player% golden_apple 1"
+        chance: 0.02
+      - command: "eco give %player% 50"
+        chance: 0.1
+    CARROTS:
+      - command: "give %player% diamond 1"
+        chance: 0.03
+    POTATOES:
+      - command: "give %player% emerald 1"
+        chance: 0.03
+    BEETROOTS:
+      - command: "give %player% iron_ingot 5"
+        chance: 0.05
+
+  entities:
+    ZOMBIE:
+      - command: "give %player% diamond 2"
+        chance: 0.1
+      - command: "eco give %player% 200"
+        chance: 0.2
+    SKELETON:
+      - command: "give %player% emerald 3"
+        chance: 0.1
+    CREEPER:
+      - command: "give %player% tnt 5"
+        chance: 0.15
+    ENDER_DRAGON:
+      - command: "give %player% nether_star 1"
+        chance: 1.0
+      - command: "eco give %player% 10000"
+        chance: 1.0

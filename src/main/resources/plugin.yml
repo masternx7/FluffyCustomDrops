@@ -1,0 +1,17 @@
+name: FluffyCustomDrops
+version: '1.0'
+main: dev.fluffyworld.fluffyCustomDrops.FluffyCustomDrops
+api-version: '1.21'
+author: FluffyWorld
+description: Custom drop rewards for blocks, crops, and entities
+
+commands:
+  fluffydrops:
+    description: Reload the plugin configuration
+    usage: /fluffydrops reload
+    aliases: [fdrops, fd]
+
+permissions:
+  fluffydrops.reload:
+    description: Allows reloading the plugin configuration
+    default: op

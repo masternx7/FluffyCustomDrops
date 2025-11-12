@@ -1,0 +1,5 @@
+prefix: "&#FF69B4[FluffyDrops]&r "
+
+reload-success: "%prefix%&#00FF00การตั้งค่าถูกโหลดใหม่เรียบร้อยแล้ว!"
+reload-failed: "%prefix%&#FF0000เกิดข้อผิดพลาดในการโหลดการตั้งค่า!"
+no-permission: "%prefix%&#FF0000คุณไม่มีสิทธิ์ใช้คำสั่งนี้!"
