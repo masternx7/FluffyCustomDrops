@@ -1,5 +1,5 @@
 name: FluffyCustomDrops
-version: '1.0'
+version: '${project.version}'
 main: dev.fluffyworld.fluffyCustomDrops.FluffyCustomDrops
 api-version: '1.21'
 author: FluffyWorld

@@ -6,7 +6,7 @@
 
     <groupId>dev.fluffyworld</groupId>
     <artifactId>FluffyCustomDrops</artifactId>
-    <version>1.0</version>
+    <version>1.0.0-BETA</version>
     <packaging>jar</packaging>
 
     <name>FluffyCustomDrops</name>
