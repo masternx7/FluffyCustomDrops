@@ -1,3 +1,5 @@
+prevent-placed-block-drops: false
+
 drops:
   blocks:
     STONE:

@@ -4,6 +4,7 @@ import dev.fluffyworld.fluffyCustomDrops.command.ReloadCommand;
 import dev.fluffyworld.fluffyCustomDrops.config.ConfigManager;
 import dev.fluffyworld.fluffyCustomDrops.config.MessageManager;
 import dev.fluffyworld.fluffyCustomDrops.listener.BlockBreakListener;
+import dev.fluffyworld.fluffyCustomDrops.listener.BlockPlaceListener;
 import dev.fluffyworld.fluffyCustomDrops.listener.EntityDeathListener;
 import dev.fluffyworld.fluffyCustomDrops.reward.RewardManager;
 import org.bukkit.Bukkit;
@@ -15,12 +16,16 @@ public final class FluffyCustomDrops extends JavaPlugin {
     private ConfigManager configManager;
     private MessageManager messageManager;
     private RewardManager rewardManager;
+    private BlockPlaceListener blockPlaceListener;
 
     @Override
     public void onEnable() {
         configManager = new ConfigManager(this);
         messageManager = new MessageManager(configManager);
         rewardManager = new RewardManager(configManager);
+
+        boolean preventPlacedBlockDrops = configManager.getConfig().getBoolean("prevent-placed-block-drops", true);
+        blockPlaceListener = new BlockPlaceListener(preventPlacedBlockDrops);
 
         registerListeners();
         registerCommands();
@@ -35,7 +40,8 @@ public final class FluffyCustomDrops extends JavaPlugin {
 
     private void registerListeners() {
         PluginManager pm = Bukkit.getPluginManager();
-        pm.registerEvents(new BlockBreakListener(rewardManager), this);
+        pm.registerEvents(blockPlaceListener, this);
+        pm.registerEvents(new BlockBreakListener(rewardManager, blockPlaceListener), this);
         pm.registerEvents(new EntityDeathListener(rewardManager), this);
     }
 
@@ -49,5 +55,8 @@ public final class FluffyCustomDrops extends JavaPlugin {
         configManager.reload();
         messageManager = new MessageManager(configManager);
         rewardManager.reload();
+
+        boolean preventPlacedBlockDrops = configManager.getConfig().getBoolean("prevent-placed-block-drops", true);
+        blockPlaceListener = new BlockPlaceListener(preventPlacedBlockDrops);
     }
 }
